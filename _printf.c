@@ -27,14 +27,14 @@ int _printf(const char *format, ...)
 		if (format[index] != '%')
 		{
 			_putchar(format[index]);
-			count += count + 1;
+			count += 1;
 		}
 		/* To account for '%c' conversion specifier */
 		else if (format[index] == '%' && format[index + 1] == 'c')
 		{
 			_putchar(va_arg(arguments, int));
 			index++;
-			count += count + 1;
+			count += 1;
 		}
 		/* To account for '%s' conversion specifier */
 		else if (format[index] == '%' && format[index + 1] == 's')
@@ -44,16 +44,15 @@ int _printf(const char *format, ...)
 			
 			for (k = 0; str[k] != '\0'; k++)
 				_putchar(str[k]);
-				count += count + 1;
+				count += 1;
 		}
 		/* To account for '%%' conversion specifier */
 		else if (format[index] == '%' && format[index + 1] == '%')
 		{
 			_putchar('%');
-			count += count + 1;
+			count += 1;
 		}
-		
 	}
-
+	va_end(arguments);
 	return (count);
 }
