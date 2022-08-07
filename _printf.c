@@ -62,6 +62,11 @@ int _printf(const char *format, ...)
 			_print_d(va_arg(arguments, int));
 			index++;
 		}
+		else if (format[index] == '%' && format[index + 1] == 'b')
+		{
+			_print_b(va_arg(arguments, int));
+			index++;
+		}
 	}
 	va_end(arguments);
 	return (count);
