@@ -3,8 +3,8 @@
 
 int main(void)
 {
-	_printf("%b\n", 10);
-	printf("%b\n", 10);
+	_printf("%s\n", "Hello");
+	printf("%s\n", "Hello");
 
 	return (0);
 }
