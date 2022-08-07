@@ -3,8 +3,8 @@
 
 int main(void)
 {
-	_printf("Hello %%\n");
-	printf("Hello %%");
+	_printf("%d\n", 67);
+	printf("%d\n", 67);
 
 	return (0);
 }

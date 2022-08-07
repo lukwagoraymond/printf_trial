@@ -3,8 +3,7 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-
-
+int _print_i(int num);
 
 
 #endif /* _MAIN_H_ */

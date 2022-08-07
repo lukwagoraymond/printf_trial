@@ -14,9 +14,8 @@
  */
 int _printf(const char *format, ...)
 {
-	int index;
+	int index, k;
 	char *str = NULL;
-	int k;
 	int count = 0;
 
 	va_list(arguments);
@@ -51,6 +50,17 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			count += 1;
+		}
+		/* To account for '%d' conversion specifier */
+		else if (format[index] == '%' && format[index + 1] == 'i')
+		{
+			_print_i(va_arg(arguments, int));
+			index++;
+		}
+		else if (format[index] == '%' && format[index + 1] == 'd')
+		{
+			_print_d(va_arg(arguments, int));
+			index++;
 		}
 	}
 	va_end(arguments);
